@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "BikramYoga"
+  },
+  "hostingPlanName": {
+    "value": "Default1"
+  },
+  "siteLocation": {
+    "value": "West Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "7a0825c8-a174-4a18-857f-00890adb35d8"
+  },
+  "resourceGroup": {
+    "value": "Default-Web-WestEurope"
+  }
+}
