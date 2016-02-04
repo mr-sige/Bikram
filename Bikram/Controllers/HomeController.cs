@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Bikram.Models;
 
 namespace Bikram.Controllers
 {
@@ -10,8 +11,8 @@ namespace Bikram.Controllers
     {
         public ActionResult Index()
         {
-            Bikram.DoTheFckinWork();
-            return View();
+            var result = Bikram.DoTheFckinWork();
+            return View(new BikramViewModel(result));
         }
 
         public ActionResult About()

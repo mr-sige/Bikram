@@ -12,6 +12,17 @@ namespace Bikram.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        
+    }
+
+    public class BikramViewModel
+    {
+        public List<string> TodaysClasses { get; set; }
+
+        public BikramViewModel(List<string> todaysClasses)
+        {
+            TodaysClasses = todaysClasses;
+        }
     }
 
     public class ManageLoginsViewModel

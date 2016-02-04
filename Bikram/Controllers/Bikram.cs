@@ -4,15 +4,16 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Net;
+using Antlr.Runtime.Misc;
 using HtmlAgilityPack;
 
 namespace Bikram.Controllers
 {
     public class Bikram
     {
-        public static void DoTheFckinWork()
+        public static List<string> DoTheFckinWork()
         {
-            var result = GetTodaysYogaTimes(GetBikramTable());
+            return GetTodaysYogaTimes(GetBikramTable());
         }
         static HtmlNode GetBikramTable()
         {
@@ -25,7 +26,7 @@ namespace Bikram.Controllers
             }
         }
 
-        static string GetTodaysYogaTimes(HtmlNode table)
+        static List<string> GetTodaysYogaTimes(HtmlNode table)
         {
             
             int numOfDay = (int) DateTime.Today.DayOfWeek + 1;
@@ -40,20 +41,18 @@ namespace Bikram.Controllers
             List<string> todayList = new List<string>();
             todayList.AddRange(todayColumn.Select(n => n.InnerText));
 
+            List<string> result = new ListStack<string>();
 
-            foreach (var item in todayList)
+            for (int i = 0; i <= todayList.Count-1; i++)
             {
-                
+                if (todayList[i] != "&nbsp;")
+                {
+                    result.Add(String.Concat(startList[i], " ", todayList[i]));
+                }
             }
-            
-           
-           
-
-            
 
 
-
-            return " ";
+            return result;
         }
 
         
