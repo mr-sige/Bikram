@@ -43,15 +43,19 @@ namespace Bikram.Controllers
 
             List<string> result = new ListStack<string>();
 
-            for (int i = 0; i <= todayList.Count-1; i++)
+            for (int i = 0; i < startList.Count; i++)
+            {
+                startList[i] = startList[i].Replace(".", ":");
+            }
+
+            for (int i = 0; i < todayList.Count; i++)
             {
                 if (todayList[i] != "&nbsp;")
                 {
                     result.Add(String.Concat(startList[i], " ", todayList[i]));
                 }
             }
-
-
+            
             return result;
         }
 
