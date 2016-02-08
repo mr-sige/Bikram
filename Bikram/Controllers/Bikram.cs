@@ -30,7 +30,11 @@ namespace Bikram.Controllers
         {
             
             int numOfDay = (int) DateTime.Today.DayOfWeek + 1;
-            
+
+            if (numOfDay.Equals(1))
+            {
+                numOfDay = numOfDay + 7;
+            }
 
             var startTimes = table.SelectNodes(".//tr/td[1]");
             var todayColumn = table.SelectNodes(".//tr/td[" + numOfDay + "]");
@@ -47,6 +51,7 @@ namespace Bikram.Controllers
             {
                 startList[i] = startList[i].Replace(".", ":");
             }
+
 
             for (int i = 0; i < todayList.Count; i++)
             {
