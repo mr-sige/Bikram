@@ -16,3 +16,15 @@
    
 </div>
 
+<h3>Tomorrow's Classes:</h3>
+
+<div class="jumbotron">
+    @{
+           for (int i = 0; i < @Model.TodaysClasses.Count; i++)
+           {
+               <p>@Model.TomorrowsClasses[i]</p>
+                
+           }
+       }
+   
+</div>

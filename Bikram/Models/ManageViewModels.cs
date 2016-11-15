@@ -8,16 +8,18 @@ namespace Bikram.Models
     public class IndexViewModel
     {
        
-        
     }
 
     public class BikramViewModel
     {
         public List<string> TodaysClasses { get; set; }
 
-        public BikramViewModel(List<string> todaysClasses)
+		public List<string> TomorrowsClasses { get; set; }
+
+		public BikramViewModel(List<string> todaysClasses, List<string> tomorrowsClasses)
         {
             TodaysClasses = todaysClasses;
+			TomorrowsClasses = tomorrowsClasses;
         }
     }
     
