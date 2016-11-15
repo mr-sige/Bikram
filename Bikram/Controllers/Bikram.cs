@@ -52,7 +52,7 @@ namespace Bikram.Controllers
 
 
 			var startTimes = table.SelectNodes(".//tr/td[1]");
-			var todayColumn = table.SelectNodes($".//tr/td[" + numOfDay + 1 + "]");
+			var todayColumn = table.SelectNodes(".//tr/td[" + (numOfDay + 1) + "]");
 
 			List<string> startList = new List<string>();
 			startList.AddRange(startTimes.Select(n => n.InnerText));
